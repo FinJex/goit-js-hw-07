@@ -30,11 +30,12 @@ const galleryItems = images.map(image => {
   const li = document.createElement(`li`);
   const img = document.createElement(`img`);
 
-  img.setAttribute(`src`, image.url);
-  img.setAttribute(`alt`, image.alt);
-  li.append(img);
+   img.setAttribute(`src`, image.url);
+   img.setAttribute(`alt`, image.alt);
+   li.append(img);
 
   return li;
 });
 
 gallery.append(...galleryItems);
+  
