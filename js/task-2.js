@@ -26,13 +26,15 @@ const images = [
   }
 ];
 const gallery = document.querySelector(`.gallery`);
-for(const image of images) {
-const li = document.createElement(`li`);
-const img = document.createElement(`img`);
-gallery.append(li);
-li.append(img);
-img.setAttribute('src', image.url);
-img.setAttribute('alt', image.alt);
+const galleryItems = images.map(image => {
+  const li = document.createElement(`li`);
+  const img = document.createElement(`img`);
 
-}
+  img.setAttribute(`src`, image.url);
+  img.setAttribute(`alt`, image.alt);
+  li.append(img);
 
+  return li;
+});
+
+gallery.append(...galleryItems);
